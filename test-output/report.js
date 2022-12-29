@@ -57,8 +57,7 @@ formatter.match({
   "location": "Steps.user_can_view_Dashboard()"
 });
 formatter.result({
-  "error_message": "java.lang.NullPointerException: Cannot invoke \"org.openqa.selenium.WebDriver.getTitle()\" because \"this.ldriver\" is null\r\n\tat pageObjects.AddCustomerPage.getPageTitle(AddCustomerPage.java:44)\r\n\tat stepDefination.Steps.user_can_view_Dashboard(Steps.java:71)\r\n\tat ✽.User can view Dashboard(file:Feture/custmer.feature:8)\r\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.step({
   "name": "User click on customer Menu",
@@ -68,7 +67,7 @@ formatter.match({
   "location": "Steps.user_click_on_customer_Menu()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "click on customer menu item",
@@ -78,7 +77,7 @@ formatter.match({
   "location": "Steps.click_on_customer_menu_item()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "click on new add new button",
@@ -88,7 +87,7 @@ formatter.match({
   "location": "Steps.click_on_new_add_new_button()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "user can view  Add new customer page",
@@ -98,7 +97,7 @@ formatter.match({
   "location": "Steps.user_can_view_Add_new_customer_page()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "user enter customer info",
@@ -108,7 +107,7 @@ formatter.match({
   "location": "Steps.user_enter_customer_info()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "click on save button",
@@ -118,17 +117,17 @@ formatter.match({
   "location": "Steps.click_on_save_button()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
-  "name": "user can view configuration message \"the new customer has been added successfully\"",
+  "name": "user can view configuration message \"The new customer has been added successfully.\"",
   "keyword": "Then "
 });
 formatter.match({
   "location": "Steps.user_can_view_configuration_message(String)"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 formatter.step({
   "name": "close browser",
@@ -138,6 +137,6 @@ formatter.match({
   "location": "Steps.close_browser()"
 });
 formatter.result({
-  "status": "skipped"
+  "status": "passed"
 });
 });

@@ -1,5 +1,6 @@
 package stepDefination;
 
+
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
@@ -65,10 +66,10 @@ public class Steps extends Baseclass {
 	//customer feature stepdefination
 
 	@Then("User can view Dashboard")
-	public void user_can_view_Dashboard(){
+	public void user_can_view_Dashboard() throws InterruptedException{
 		
 		addcust=new AddCustomerPage(driver);
-	
+		Thread.sleep(3000);
 	Assert.assertEquals("Dashboard / nopCommerce administration", addcust.getPageTitle());
 	}
 	@When("User click on customer Menu")
@@ -83,7 +84,7 @@ public class Steps extends Baseclass {
 		addcust.Clickoncutmrmenuitem();
 	}
 
-	@When("click on new add new button")
+	@When("click on new add new button") 
 	public void click_on_new_add_new_button() throws InterruptedException {
 		Thread.sleep(2000);
 		addcust.Clickonaddnewbtn();
@@ -102,7 +103,6 @@ public class Steps extends Baseclass {
 	addcust.Textpswrd("test123");
 	addcust.SetCutmrrole("Guset");
 	Thread.sleep(2000);
-	
 	addcust.setManagervendor("Vendor 2");
 	addcust.setGender("Male");
 	addcust.setfname("Sharath");
@@ -120,7 +120,7 @@ public class Steps extends Baseclass {
 
 	@Then("user can view configuration message {string}")
 	public void user_can_view_configuration_message(String msg) {
-		Assert.assertTrue(driver.findElement(By.tagName("body")).getText().contains("the new customer has been added successfully"));
+		Assert.assertTrue(driver.findElement(By.tagName("body")).getText().contains("The new customer has been added successfully."));
 	}
 
 

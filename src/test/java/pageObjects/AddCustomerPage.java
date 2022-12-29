@@ -11,6 +11,7 @@ public class AddCustomerPage {
 	WebDriver ldriver;
 	public AddCustomerPage(WebDriver rdriver)
 	{
+		ldriver=rdriver;
 		PageFactory.initElements(ldriver, this); 
 	}
 	By lnkcutmrmenu = By.xpath("//a[@href=\"#\"]//p[contains(text(),\"Customers\")]");
@@ -43,8 +44,6 @@ public class AddCustomerPage {
 
 	return ldriver.getTitle();
 	}
-	
-	
 	public void Clickoncutmrmenu()
 	{
 		ldriver.findElement(lnkcutmrmenu).click();
@@ -77,7 +76,7 @@ public class AddCustomerPage {
 	{
 		if(!role.equals("Vendors"))
 		{
-			ldriver.findElement(By.xpath(" //div[@class='input-group-append input-group-required']//div[@role='listbox']"));
+			ldriver.findElement(By.xpath("//*[@id=\"SelectedCustomerRoleIds_taglist\"]/li/span[2]")).click();
 
 		}
 		ldriver.findElement(cstmrole).click();
@@ -98,20 +97,19 @@ public class AddCustomerPage {
 		{
 			listitem = ldriver.findElement(cstmerroleoption2);
 		}
-		else 
+		else
 		{
-			listitem = ldriver.findElement(cstmerroleoption4);
+			listitem = ldriver.findElement(cstmerroleoption3);
 		}
-		listitem.click();
-
+	
 		JavascriptExecutor js = (JavascriptExecutor)ldriver;
-		js.executeScript("argument[0].click();", listitem);
+		js.executeScript("arguments[0].click();", listitem);
 
 	}
 	public void setManagervendor(String value)
 	{
-		Select drp = new Select(ldriver.findElement(cstmervendor));
-		drp.deselectByValue(value);
+		Select drp=new Select(ldriver.findElement(cstmervendor));
+		drp.selectByVisibleText(value);
 	}
 
 	public void setGender(String gender) {
