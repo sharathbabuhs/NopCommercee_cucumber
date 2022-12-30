@@ -10,6 +10,7 @@ import cucumber.api.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import pageObjects.AddCustomerPage;
 import pageObjects.LogInPage;
+import pageObjects.SearchCustomerPage;
 
 public class Steps extends Baseclass {
 	
@@ -98,7 +99,7 @@ public class Steps extends Baseclass {
 
 	@When("user enter customer info")
 	public void user_enter_customer_info() throws InterruptedException {
-	String email= randmestringn()+"@gmail.com";
+	String email= randmestring()+"@gmail.com";
 	addcust.Textemail(email);
 	addcust.Textpswrd("test123");
 	addcust.SetCutmrrole("Guset");
@@ -122,6 +123,28 @@ public class Steps extends Baseclass {
 	public void user_can_view_configuration_message(String msg) {
 		Assert.assertTrue(driver.findElement(By.tagName("body")).getText().contains("The new customer has been added successfully."));
 	}
+
+//Serching a customer using email ID
+
+@When("Enter emailid")
+public void enter_emailid() {
+	srccust=new SearchCustomerPage(driver);
+   srccust.setEmail("victoria_victoria@nopCommerce.com");
+}
+
+@When("click on search button")
+public void click_on_search_button() throws InterruptedException {
+	srccust.clickonSearch();
+Thread.sleep(3000);
+}
+
+@Then("user should found Email in the search table")
+public void user_should_found_Email_in_the_search_table() {
+boolean status = srccust.searchcustmerByEmail("victoria_victoria@nopCommerce.com");
+Assert.assertEquals(true, status);
+}
+
+//search by name
 
 
 
